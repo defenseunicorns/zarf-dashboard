@@ -24,6 +24,48 @@ export class AssetsService {
   private readonly appLogoIcon_ = 'kd-logo';
   private readonly appLogoTextIcon_ = 'kd-logo-text';
 
+  private readonly icons = [
+    'api',
+    'crd',
+    'hpa',
+    'node',
+    'rb',
+    'sts',
+    'c-c-m',
+    'cronjob',
+    'ing',
+    'ns',
+    'role',
+    'svc',
+    'c-m',
+    'deploy',
+    'job',
+    'pod',
+    'rs',
+    'user',
+    'c-role',
+    'ds',
+    'k-proxy',
+    'psp',
+    'sa',
+    'vol',
+    'cm',
+    'ep',
+    'kubelet',
+    'pv',
+    'sc',
+    'control-plane',
+    'etcd',
+    'limits',
+    'pvc',
+    'sched',
+    'crb',
+    'group',
+    'netpol',
+    'quota',
+    'secret',
+  ];
+
   constructor(
     @Inject(MatIconRegistry) private readonly iconRegistry_: MatIconRegistry,
     @Inject(DomSanitizer) private readonly sanitizer_: DomSanitizer
@@ -36,11 +78,15 @@ export class AssetsService {
       this.appLogoTextIcon_,
       sanitizer_.bypassSecurityTrustResourceUrl(`${this.assetsPath_}/${this.appLogoTextSvg_}`)
     );
-    iconRegistry_.addSvgIcon('pin', sanitizer_.bypassSecurityTrustResourceUrl(`${this.assetsPath_}/pin.svg`));
+    iconRegistry_.addSvgIcon('pin', sanitizer_.bypassSecurityTrustResourceUrl(`${this.assetsPath_}/'pin.svg',`));
     iconRegistry_.addSvgIcon(
       'pin-crossed',
       sanitizer_.bypassSecurityTrustResourceUrl(`${this.assetsPath_}/pin-crossed.svg`)
     );
+
+    this.icons.forEach(icon => {
+      iconRegistry_.addSvgIcon(icon, sanitizer_.bypassSecurityTrustResourceUrl(`${this.assetsPath_}/k8s/${icon}.svg`));
+    });
   }
 
   getAppLogo(): string {
