@@ -15,7 +15,7 @@
 import {NgModule} from '@angular/core';
 import {Route, RouterModule} from '@angular/router';
 
-import {CLUSTER_ROUTE} from '../routing';
+import {CLUSTER_ROUTE} from '../cluster/routing';
 
 import {ActionbarComponent} from './detail/actionbar/component';
 import {NamespaceDetailComponent} from './detail/component';

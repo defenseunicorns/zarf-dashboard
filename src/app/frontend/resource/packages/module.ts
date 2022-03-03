@@ -15,7 +15,7 @@
 import {NgModule} from '@angular/core';
 
 import {ComponentsModule} from '@common/components/module';
-import {SharedModule} from '../../../shared.module';
+import {SharedModule} from '../../shared.module';
 
 import {ActionbarComponent} from './detail/actionbar/component';
 import {NamespaceDetailComponent} from './detail/component';
