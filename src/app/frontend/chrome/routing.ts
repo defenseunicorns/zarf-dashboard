@@ -29,6 +29,12 @@ const routes: Routes = [
         loadChildren: () => import('error/module').then(m => m.ErrorModule),
       },
 
+      // Packages
+      {
+        path: 'packages',
+        loadChildren: () => import('resource/packages/module').then(m => m.NamespaceModule),
+      },
+
       // Cluster group
       {
         path: 'cluster',

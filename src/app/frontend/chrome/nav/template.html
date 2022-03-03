@@ -22,6 +22,30 @@ limitations under the License.
 
       <!-- Workloads -->
       <kd-nav-item class="kd-nav-group-item"
+                   state="/packages"
+                   id="nav-packages"
+                   [namespaced]="false"
+                   i18n>Packages
+      </kd-nav-item>
+      <kd-nav-item class="kd-nav-group-item"
+                    state="/comp"
+                    id="nav-comp"
+                    [namespaced]="true"
+                    i18n>Comp
+      </kd-nav-item>
+      <kd-nav-item class="kd-nav-group-item"
+                    state="/pods"
+                    id="nav-pods"
+                    [namespaced]="true"
+                    i18n>Pods
+      </kd-nav-item>
+      <kd-nav-item class="kd-nav-group-item"
+                    state="/jobs"
+                    id="nav-jobs"
+                    [namespaced]="true"
+                    i18n>Jobs
+      </kd-nav-item>
+      <kd-nav-item class="kd-nav-group-item"
                    state="/workloads"
                    id="nav-workloads"
                    [namespaced]="true"
