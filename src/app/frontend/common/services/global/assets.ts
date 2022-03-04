@@ -21,49 +21,43 @@ export class AssetsService {
   private readonly assetsPath_ = 'assets/images';
   private readonly appLogoSvg_ = 'kubernetes-logo.svg';
   private readonly appLogoTextSvg_ = 'kubernetes-logo-text.svg';
-  private readonly appLogoIcon_ = 'kd-logo';
-  private readonly appLogoTextIcon_ = 'kd-logo-text';
+  private readonly appLogoIcon_ = 'zarf-logo';
+  private readonly appLogoTextIcon_ = 'zarf-logo-text';
 
   private readonly icons = [
-    'api',
-    'crd',
-    'hpa',
-    'node',
-    'rb',
-    'sts',
-    'c-c-m',
-    'cronjob',
-    'ing',
-    'ns',
-    'role',
-    'svc',
-    'c-m',
-    'deploy',
-    'job',
-    'pod',
-    'rs',
-    'user',
     'c-role',
-    'ds',
-    'k-proxy',
-    'psp',
-    'sa',
-    'vol',
     'cm',
-    'ep',
-    'kubelet',
-    'pv',
-    'sc',
     'control-plane',
-    'etcd',
-    'limits',
-    'pvc',
-    'sched',
     'crb',
+    'crd',
+    'cronjob',
+    'deploy',
+    'ds',
+    'ep',
+    'etcd',
     'group',
+    'hpa',
+    'ing',
+    'job',
+    'limits',
     'netpol',
+    'node',
+    'ns',
+    'pod',
+    'psp',
+    'pv',
+    'pvc',
     'quota',
+    'rb',
+    'role',
+    'rs',
+    'sa',
+    'sc',
     'secret',
+    'sts',
+    'svc',
+    'user',
+    'vol',
   ];
 
   constructor(
@@ -84,8 +78,24 @@ export class AssetsService {
       sanitizer_.bypassSecurityTrustResourceUrl(`${this.assetsPath_}/pin-crossed.svg`)
     );
 
+    iconRegistry_.addSvgIcon(
+      'zarf-logo',
+      sanitizer_.bypassSecurityTrustResourceUrl(`${this.assetsPath_}/zarf-logo.svg`)
+    );
+    iconRegistry_.addSvgIcon(
+      'zarf-logo-text',
+      sanitizer_.bypassSecurityTrustResourceUrl(`${this.assetsPath_}/zarf-logo-text.svg`)
+    );
+
     this.icons.forEach(icon => {
-      iconRegistry_.addSvgIcon(icon, sanitizer_.bypassSecurityTrustResourceUrl(`${this.assetsPath_}/k8s/${icon}.svg`));
+      iconRegistry_.addSvgIcon(
+        `k8s-${icon}-labeled`,
+        sanitizer_.bypassSecurityTrustResourceUrl(`${this.assetsPath_}/k8s/labeled/${icon}.svg`)
+      );
+      iconRegistry_.addSvgIcon(
+        `k8s-${icon}`,
+        sanitizer_.bypassSecurityTrustResourceUrl(`${this.assetsPath_}/k8s/unlabeled/${icon}.svg`)
+      );
     });
   }
 
