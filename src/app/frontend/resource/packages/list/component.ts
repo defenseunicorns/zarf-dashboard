@@ -16,6 +16,6 @@ import {Component} from '@angular/core';
 
 @Component({
   selector: 'kd-namespace-list-view',
-  template: '<kd-namespace-list></kd-namespace-list>',
+  template: '<kd-package-list></kd-package-list>',
 })
-export class NamespaceListComponent {}
+export class PackageListComponent {}

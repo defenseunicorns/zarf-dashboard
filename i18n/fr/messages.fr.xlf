@@ -767,7 +767,7 @@
         <target>Créer une nouvelle ressource</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/frontend/chrome/template.html</context>
-          <context context-type="linenumber">47</context>
+          <context context-type="linenumber">46</context>
         </context-group>
       </trans-unit>
       <trans-unit id="5943454400955467108" datatype="html">
@@ -1877,6 +1877,14 @@
         <target state="new">Role Bindings</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/frontend/common/components/resourcelist/rolebinding/template.html</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3827494340968677562" datatype="html">
+        <source>Packages</source>
+        <target state="new">Packages</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/frontend/common/components/resourcelist/namespace/template.html</context>
           <context context-type="linenumber">21</context>
         </context-group>
       </trans-unit>
@@ -3498,14 +3506,6 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/frontend/common/components/resourcelist/crdversion/template.html</context>
           <context context-type="linenumber">48</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="7060498773332878646" datatype="html">
-        <source>Namespaces</source>
-        <target>Espaces de noms</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/frontend/common/components/resourcelist/namespace/template.html</context>
-          <context context-type="linenumber">21</context>
         </context-group>
       </trans-unit>
       <trans-unit id="8384742917026482252" datatype="html">

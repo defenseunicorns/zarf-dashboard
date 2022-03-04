@@ -81,6 +81,7 @@ import {HorizontalPodAutoscalerListComponent} from './resourcelist/horizontalpod
 import {IngressListComponent} from './resourcelist/ingress/component';
 import {JobListComponent} from './resourcelist/job/component';
 import {NamespaceListComponent} from './resourcelist/namespace/component';
+import {PackageListComponent} from './resourcelist/package/component';
 import {NetworkPolicyListComponent} from './resourcelist/networkpolicy/component';
 import {NodeListComponent} from './resourcelist/node/component';
 import {PersistentVolumeListComponent} from './resourcelist/persistentvolume/component';
@@ -157,6 +158,7 @@ const components = [
   LogsDefaultActionbar,
   MenuComponent,
   NamespaceListComponent,
+  PackageListComponent,
   NodeListComponent,
   NamespaceSelectorComponent,
   NamespaceChangeDialog,

@@ -19,11 +19,11 @@ import {Route, RouterModule} from '@angular/router';
 
 import {ActionbarComponent} from './detail/actionbar/component';
 import {NamespaceDetailComponent} from './detail/component';
-import {NamespaceListComponent} from './list/component';
+import {PackageListComponent} from './list/component';
 
 const NAMESPACE_LIST_ROUTE: Route = {
   path: '',
-  component: NamespaceListComponent,
+  component: PackageListComponent,
   data: {
     breadcrumb: 'Packages',
     link: ['', 'packages'],
