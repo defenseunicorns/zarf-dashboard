@@ -15,7 +15,7 @@
 import {NgModule} from '@angular/core';
 import {Route, RouterModule} from '@angular/router';
 
-import {CLUSTER_ROUTE} from '../cluster/routing';
+// import {CLUSTER_ROUTE} from '../cluster/routing';
 
 import {ActionbarComponent} from './detail/actionbar/component';
 import {NamespaceDetailComponent} from './detail/component';
@@ -25,8 +25,8 @@ const NAMESPACE_LIST_ROUTE: Route = {
   path: '',
   component: NamespaceListComponent,
   data: {
-    breadcrumb: 'Namespaces',
-    parent: CLUSTER_ROUTE,
+    breadcrumb: 'Packages',
+    link: ['', 'packages'],
   },
 };
 

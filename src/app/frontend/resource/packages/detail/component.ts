@@ -22,6 +22,7 @@ import {ActionbarService, ResourceMeta} from '@common/services/global/actionbar'
 import {NotificationsService} from '@common/services/global/notifications';
 import {EndpointManager, Resource} from '@common/services/resource/endpoint';
 import {ResourceService} from '@common/services/resource/resource';
+import {ComponentsModule} from '@common/components/module';
 
 @Component({
   selector: 'kd-namespace-detail',
