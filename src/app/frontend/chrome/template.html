@@ -21,6 +21,7 @@ limitations under the License.
     <div class="kd-toolbar-tools"
          fxLayout="row"
          fxFlex="auto">
+      <kd-nav-hamburger fxFlex="none"></kd-nav-hamburger>
       <div class="kd-logo-bar">
         <a [routerLink]="getWorkloadsStateName()"
            queryParamsHandling="preserve"
@@ -33,8 +34,6 @@ limitations under the License.
           </mat-icon>
         </a>
       </div>
-      <kd-namespace-selector id="nav-namespace-selector">
-      </kd-namespace-selector>
 
       <kd-search class="kd-search-bar"
                  fxFlex>
@@ -54,21 +53,6 @@ limitations under the License.
     </div>
   </mat-toolbar>
 
-  <mat-toolbar class="kd-second-toolbar kd-bg-primary">
-    <div class="kd-toolbar-tools"
-         fxFlex>
-      <kd-nav-hamburger fxFlex="none"></kd-nav-hamburger>
-      <kd-breadcrumbs class="kd-actionbar-breadcrumbs"></kd-breadcrumbs>
-      <kd-actionbar fxFlex="end"></kd-actionbar>
-    </div>
-  </mat-toolbar>
-
-  <mat-toolbar class="kd-system-banner"
-               [ngClass]="getSystemBannerClass()"
-               *ngIf="isSystemBannerVisible()"
-               [innerHTML]="getSystemBannerMessage()">
-  </mat-toolbar>
-
   <div fxFlex
        fxLayout="row"
        class="kd-chrome-container kd-bg-background">
@@ -86,6 +70,20 @@ limitations under the License.
       <div *ngSwitchCase="false"
            fxFlex
            class="kd-scroll-container">
+        <mat-toolbar class="kd-system-banner"
+           [ngClass]="getSystemBannerClass()"
+           *ngIf="isSystemBannerVisible()"
+           [innerHTML]="getSystemBannerMessage()">
+        </mat-toolbar>    
+        <mat-toolbar class="kd-second-toolbar">
+          <div class="kd-toolbar-tools"
+               fxFlex>
+            <kd-breadcrumbs class="kd-actionbar-breadcrumbs"></kd-breadcrumbs>
+            <kd-actionbar fxFlex="end"></kd-actionbar>
+            <kd-namespace-selector id="nav-namespace-selector">
+            </kd-namespace-selector>
+          </div>
+        </mat-toolbar>
         <router-outlet></router-outlet>
       </div>
     </div>

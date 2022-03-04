@@ -37,6 +37,7 @@
 
 .kd-logo-bar {
   height: 4 * $baseline-grid;
+  margin-left: 2 * $baseline-grid;
   width: $nav-width;
 }
 
@@ -54,10 +55,10 @@
 }
 
 .kd-second-toolbar {
-  box-shadow: $whiteframe-shadow-1dp;
+  box-shadow: none;
   height: 7 * $baseline-grid;
   min-height: 7 * $baseline-grid;
-  padding-left: 0.5 * $baseline-grid;
+  padding: 1 * $baseline-grid;
 
   // Move entire second toolbar above content to avoid elements overlap with
   // shadow (there was problem with it on IE).
@@ -66,13 +67,14 @@
 
 .kd-system-banner {
   box-shadow: $whiteframe-shadow-1dp;
-  display: inline;
+  flex-direction: column;
   font-size: $body-font-size-base;
   height: 6 * $baseline-grid;
   line-height: 6 * $baseline-grid;
   min-height: 6 * $baseline-grid;
   overflow: hidden;
   padding: 0 (3 * $baseline-grid);
+  text-align: center;
   white-space: nowrap;
 
   // Move entire system banner above content to avoid elements overlap with
