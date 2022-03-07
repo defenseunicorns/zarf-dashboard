@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, EventEmitter, Output} from '@angular/core';
 import {ActivatedRoute, NavigationEnd, Params, Route, Router} from '@angular/router';
 import {Breadcrumb} from '@api/root.ui';
 import {distinctUntilChanged, filter} from 'rxjs/operators';
@@ -31,6 +31,8 @@ export const SEARCH_BREADCRUMB_PLACEHOLDER = '___SEARCH_BREADCRUMB_PLACEHOLDER__
   styleUrls: ['./style.scss'],
 })
 export class BreadcrumbsComponent implements OnInit {
+  // Set up event emitter to alert parent of breadcrumb length changes.
+  @Output() crumbLengthEvent = new EventEmitter<number>();
   breadcrumbs: Breadcrumb[];
 
   constructor(private readonly _router: Router, private readonly _activatedRoute: ActivatedRoute) {}
@@ -110,6 +112,8 @@ export class BreadcrumbsComponent implements OnInit {
     }
 
     this.breadcrumbs.reverse();
+    // Emit the new length for use in parent component.
+    this.crumbLengthEvent.emit(this.breadcrumbs.length);
   }
 
   private _getLogsParent(params: Params): Route | undefined {

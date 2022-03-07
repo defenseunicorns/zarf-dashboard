@@ -14,9 +14,10 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-<div fxLayout="column"
+<div  fxLayout="column"
      fxFill
-     fxFlexFill>
+     fxFlexFill 
+     >
   <mat-toolbar class="kd-toolbar kd-primary-toolbar">
     <div class="kd-toolbar-tools"
          fxLayout="row"
@@ -76,11 +77,13 @@ limitations under the License.
                      [innerHTML]="getSystemBannerMessage()">
         </mat-toolbar>
         <mat-toolbar class="kd-second-toolbar">
-          <div class="kd-toolbar-tools"
+          <div class="kd-toolbar-tools" 
                fxFlex>
-            <kd-breadcrumbs class="kd-actionbar-breadcrumbs"></kd-breadcrumbs>
+               <!--Subscribe to the crumbLength event and update the crumb length on change. -->
+            <kd-breadcrumbs class="kd-actionbar-breadcrumbs"  (crumbLengthEvent)="setCrumbLength($event)"></kd-breadcrumbs>
             <kd-actionbar fxFlex="end"></kd-actionbar>
-            <kd-namespace-selector id="nav-namespace-selector">
+            <!--Only show namespace-selector if the showNamespace() returns true.-->
+            <kd-namespace-selector *ngIf="showNamespace()"  id="nav-namespace-selector">
             </kd-namespace-selector>
           </div>
         </mat-toolbar>
