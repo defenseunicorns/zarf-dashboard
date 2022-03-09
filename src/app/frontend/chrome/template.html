@@ -71,16 +71,20 @@ limitations under the License.
            fxFlex
            class="kd-scroll-container">
         <mat-toolbar class="kd-system-banner"
-           [ngClass]="getSystemBannerClass()"
-           *ngIf="isSystemBannerVisible()"
-           [innerHTML]="getSystemBannerMessage()">
-        </mat-toolbar>    
+                     [ngClass]="getSystemBannerClass()"
+                     *ngIf="isSystemBannerVisible()"
+                     [innerHTML]="getSystemBannerMessage()">
+        </mat-toolbar>
         <mat-toolbar class="kd-second-toolbar">
           <div class="kd-toolbar-tools"
                fxFlex>
-            <kd-breadcrumbs class="kd-actionbar-breadcrumbs"></kd-breadcrumbs>
+            <!--Subscribe to the crumbLength event and update the crumb length on change. -->
+            <kd-breadcrumbs class="kd-actionbar-breadcrumbs"
+                            (crumbLengthEvent)="setCrumbLength($event)"></kd-breadcrumbs>
             <kd-actionbar fxFlex="end"></kd-actionbar>
-            <kd-namespace-selector id="nav-namespace-selector">
+            <!--Only show namespace-selector if the showNamespace() returns true.-->
+            <kd-namespace-selector *ngIf="showNamespace()"
+                                   id="nav-namespace-selector">
             </kd-namespace-selector>
           </div>
         </mat-toolbar>

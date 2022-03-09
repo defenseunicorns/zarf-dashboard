@@ -33,6 +33,8 @@ class SystemBanner {
 export class ChromeComponent implements OnInit {
   private static readonly systemBannerEndpoint = 'api/v1/systembanner';
   private systemBanner_: SystemBanner;
+  // Store breadcrumb length to determine if namespace should be shown.
+  private crumbLength = 0;
   loading = false;
 
   constructor(
@@ -52,6 +54,17 @@ export class ChromeComponent implements OnInit {
       });
 
     this.registerVisibilityChangeHandler_();
+  }
+
+  // Set the bread crum nav length.
+  setCrumbLength(newLength: number): void {
+    this.crumbLength = newLength;
+  }
+
+  // Shows the namespace down to two levels.
+  // Does not show the namespace on specific/discrete resources.
+  showNamespace(): boolean {
+    return this.crumbLength <= 2;
   }
 
   getWorkloadsStateName(): string {
